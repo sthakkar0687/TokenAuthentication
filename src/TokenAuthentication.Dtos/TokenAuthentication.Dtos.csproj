@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Authentication\Authentication\**" />
+    <EmbeddedResource Remove="Authentication\Authentication\**" />
+    <None Remove="Authentication\Authentication\**" />
+  </ItemGroup>
+
+</Project>

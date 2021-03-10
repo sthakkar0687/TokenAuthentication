@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenAuthentication.API", "TokenAuthentication.API\TokenAuthentication.API.csproj", "{9DEC8A73-1C40-42A7-9213-C85780AA1194}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenAuthentication.Entity", "TokenAuthentication.Entity\TokenAuthentication.Entity.csproj", "{6A2A21E1-41DB-4784-974F-13A5D7BAF83A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenAuthentication.Dtos", "TokenAuthentication.Dtos\TokenAuthentication.Dtos.csproj", "{097430BB-9424-4B54-B51E-1D102984405F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenAuthentication.Common", "TokenAuthentication.Common\TokenAuthentication.Common.csproj", "{4ECCE043-33E6-4A5A-BB2D-4B4BFBACEA5B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenAuthentication.Repositories", "TokenAuthentication.Repositories\TokenAuthentication.Repositories.csproj", "{B5E2400B-E024-4A3E-B719-FB73CF1B0210}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenAuthentication.UnitTests", "TokenAuthentication.UnitTests\TokenAuthentication.UnitTests.csproj", "{8991CBF1-693B-46C6-B685-48EB9A150A10}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenAuthentication.IntegrationTests", "TokenAuthentication.IntegrationTests\TokenAuthentication.IntegrationTests.csproj", "{8A9B8A33-1850-43FC-AC87-F5FDA76ABFE2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenAuthentication.AngularApp", "TokenAuthentication.AngularApp\TokenAuthentication.AngularApp.csproj", "{5BA447D6-44E0-40D5-8304-96659A6F80AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenAuthentication.Interfaces", "TokenAuthentication.Interfaces\TokenAuthentication.Interfaces.csproj", "{43D08655-1601-491F-98A2-77F7D474B507}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenAuthentication.Services", "TokenAuthentication.Services\TokenAuthentication.Services.csproj", "{B231F352-A402-49BF-9DDC-5CD2936075C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DEC8A73-1C40-42A7-9213-C85780AA1194}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DEC8A73-1C40-42A7-9213-C85780AA1194}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DEC8A73-1C40-42A7-9213-C85780AA1194}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DEC8A73-1C40-42A7-9213-C85780AA1194}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A2A21E1-41DB-4784-974F-13A5D7BAF83A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A2A21E1-41DB-4784-974F-13A5D7BAF83A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A2A21E1-41DB-4784-974F-13A5D7BAF83A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A2A21E1-41DB-4784-974F-13A5D7BAF83A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{097430BB-9424-4B54-B51E-1D102984405F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{097430BB-9424-4B54-B51E-1D102984405F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{097430BB-9424-4B54-B51E-1D102984405F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{097430BB-9424-4B54-B51E-1D102984405F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ECCE043-33E6-4A5A-BB2D-4B4BFBACEA5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ECCE043-33E6-4A5A-BB2D-4B4BFBACEA5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ECCE043-33E6-4A5A-BB2D-4B4BFBACEA5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ECCE043-33E6-4A5A-BB2D-4B4BFBACEA5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5E2400B-E024-4A3E-B719-FB73CF1B0210}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5E2400B-E024-4A3E-B719-FB73CF1B0210}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5E2400B-E024-4A3E-B719-FB73CF1B0210}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5E2400B-E024-4A3E-B719-FB73CF1B0210}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8991CBF1-693B-46C6-B685-48EB9A150A10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8991CBF1-693B-46C6-B685-48EB9A150A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8991CBF1-693B-46C6-B685-48EB9A150A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8991CBF1-693B-46C6-B685-48EB9A150A10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A9B8A33-1850-43FC-AC87-F5FDA76ABFE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A9B8A33-1850-43FC-AC87-F5FDA76ABFE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A9B8A33-1850-43FC-AC87-F5FDA76ABFE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A9B8A33-1850-43FC-AC87-F5FDA76ABFE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BA447D6-44E0-40D5-8304-96659A6F80AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BA447D6-44E0-40D5-8304-96659A6F80AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BA447D6-44E0-40D5-8304-96659A6F80AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BA447D6-44E0-40D5-8304-96659A6F80AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43D08655-1601-491F-98A2-77F7D474B507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43D08655-1601-491F-98A2-77F7D474B507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43D08655-1601-491F-98A2-77F7D474B507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43D08655-1601-491F-98A2-77F7D474B507}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B231F352-A402-49BF-9DDC-5CD2936075C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B231F352-A402-49BF-9DDC-5CD2936075C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B231F352-A402-49BF-9DDC-5CD2936075C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B231F352-A402-49BF-9DDC-5CD2936075C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D98503F6-1264-492E-AC7E-9630DE7B4CA9}
+	EndGlobalSection
+EndGlobal

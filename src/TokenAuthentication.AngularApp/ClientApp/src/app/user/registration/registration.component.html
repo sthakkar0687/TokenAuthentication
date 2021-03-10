@@ -1,0 +1,88 @@
+<div class="container mt-3 registration">
+  <!--{{registrationForm.value|json}}-->
+  <div style="text-align:center">
+    <!--<fa name="user" size="5x" fa-border></fa>-->
+    <i class="fa fa-address-card fa-5x fa-border"></i>
+  </div>
+  <form [formGroup]="registrationForm" (submit)="registerUser()" class="registration">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" name="firstName" class="form-control" [formControl]="firstName"
+             [class.is-invalid]="firstName.touched && firstName.invalid"
+             [class.is-valid]="firstName.touched && firstName.valid" />
+      <small class="text-danger" [class.d-none]="firstName.untouched || firstName.valid">First name is required.</small>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" name="lastName" class="form-control" [formControl]="lastName"
+             [class.is-invalid]="lastName.touched && lastName.invalid"
+             [class.is-valid]="lastName.touched && lastName.valid" />
+
+      <small class="text-danger" [class.d-none]="lastName.untouched || lastName.valid">Last name is required.</small>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" name="email" class="form-control" [formControl]="email"
+             [class.is-invalid]="email.touched && email.invalid"
+             [class.is-valid]="email.touched && email.valid" />
+      <div *ngIf="email.touched && email.invalid">
+        <small class="text-danger" *ngIf="email.errors?.required">Email is required.</small>
+        <small class="text-danger" *ngIf="email.errors?.email">Email should be in proper format.</small>
+      </div>
+
+    </div>
+    <div class="form-group">
+      <label for="dOB">DOB</label>
+      <input type="date" value="2000-01-01" name="dOB" class="form-control" [formControl]="dOB"
+             [class.is-invalid]="dOB.touched && dOB.invalid"
+             [class.is-valid]="dOB.touched && dOB.valid" />
+      <small class="text-danger" [class.d-none]="dOB.untouched || dOB.valid">DOB is required.</small>
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="text" name="phoneNumber" class="form-control" [formControl]="phoneNumber"
+             [class.is-invalid]="phoneNumber.touched && phoneNumber.invalid"
+             [class.is-valid]="phoneNumber.touched && phoneNumber.valid" />
+      <div *ngIf="phoneNumber.touched && phoneNumber.invalid">
+        <small class="text-danger" *ngIf="phoneNumber.errors?.required">Phone Number is required.</small>
+        <small class="text-danger" *ngIf="phoneNumber.errors?.pattern">Phone Number should be 10 characters long.</small>
+      </div>
+
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" name="password" class="form-control" [formControl]="password"
+             [class.is-invalid]="password.touched && password.invalid"
+             [class.is-valid]="password.touched && password.valid" />
+      <div *ngIf="password.touched && password.invalid">
+        <small class="text-danger" *ngIf="password.errors?.required">Password is required.</small>
+        <small class="text-danger" *ngIf="password.errors?.minlength">Password should be of minimum 6 characters.</small>
+        <small class="text-danger" *ngIf="password.errors?.maxlength">Password should be of maximum 20 characters.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" name="confirmPassword" class="form-control" [formControl]="confirmPassword"
+             [class.is-invalid]="confirmPassword.touched && confirmPassword.invalid || registrationForm.errors?.mismatch"
+             [class.is-valid]="confirmPassword.touched && confirmPassword.valid && !registrationForm.errors?.mismatch" />
+      <div *ngIf="confirmPassword.touched && confirmPassword.invalid || registrationForm.errors?.mismatch">
+        <small class="text-danger" *ngIf="confirmPassword.errors?.required">Confirm Password is required.</small>
+        <small class="text-danger" *ngIf="registrationForm.errors?.mismatch">Password & Confirm Password must be same.</small>
+        <!--<small class="text-danger" *ngIf="confirmPassword.errors?.minlength">Confirm Password should be of minimum 6 characters.</small>
+        <small class="text-danger" *ngIf="confirmPassword.errors?.maxlength">Confirm Password should be of maximum 20 characters.</small>-->
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="roles">Role</label>
+      <select name="roleId" class="form-control" [formControl]="roleId" (blur)="validateRole()" (change)="validateRole()"
+              [class.is-invalid]="roleId.touched && roleHasError">
+        <option value="default" selected>Select Role</option>
+        <option *ngFor="let role of roles" value="{{role.roleId}}">{{role.roleName}}</option>
+      </select>
+      <small class="text-danger" [class.d-none]="roleId.untouched || !roleHasError">Role is required.</small>
+    </div>
+    <div class="form-group">
+      <input type="submit" value="Submit" class="btn btn-primary" [disabled]="registrationForm.invalid || rolehasError" />
+    </div>
+  </form>
+</div>

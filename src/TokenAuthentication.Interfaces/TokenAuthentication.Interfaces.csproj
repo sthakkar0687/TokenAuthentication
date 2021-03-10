@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TokenAuthentication.Common\TokenAuthentication.Common.csproj" />
+    <ProjectReference Include="..\TokenAuthentication.Dtos\TokenAuthentication.Dtos.csproj" />
+    <ProjectReference Include="..\TokenAuthentication.Entity\TokenAuthentication.Entity.csproj" />
+  </ItemGroup>
+
+</Project>

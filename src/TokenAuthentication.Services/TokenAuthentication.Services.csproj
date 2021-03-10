@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.8.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TokenAuthentication.Common\TokenAuthentication.Common.csproj" />
+    <ProjectReference Include="..\TokenAuthentication.Dtos\TokenAuthentication.Dtos.csproj" />
+    <ProjectReference Include="..\TokenAuthentication.Interfaces\TokenAuthentication.Interfaces.csproj" />
+    <ProjectReference Include="..\TokenAuthentication.Repositories\TokenAuthentication.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>

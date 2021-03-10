@@ -1,0 +1,14 @@
+<div class="form-group">
+  <div class="custom-control custom-radio custom-control-inline"> 
+    <input type="radio" name="gender" id="all" value="all" [(ngModel)]="selectedRadioButtonValue" class="form-control custom-control-input" (change)="onRadioSelectionChanged()" />
+    <label for="all" class="custom-control-label">All({{all}})</label>
+  </div>
+  <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" name="gender" id="male" value="male" [(ngModel)]="selectedRadioButtonValue" class="form-control custom-control-input" (change)="onRadioSelectionChanged()" />
+    <label for="male" class="custom-control-label">Male({{male}})</label>
+  </div>
+  <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" name="gender" id="female" value="female" [(ngModel)]="selectedRadioButtonValue" class="form-control custom-control-input" (change)="onRadioSelectionChanged()" />
+    <label for="female" class="custom-control-label">Female({{female}})</label>
+  </div>
+</div>

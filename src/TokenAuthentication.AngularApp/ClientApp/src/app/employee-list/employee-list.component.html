@@ -1,0 +1,54 @@
+<div class="container">
+  <div style="float:left"><h1>Employees</h1></div>
+  <div style="float:right">
+    <input type="button" class="btn-primary btn" value="Add New" [routerLink]="['/employee/add']" />
+  </div>
+  <div style="clear:both"></div>
+
+  <div *ngIf="alert" class="alert {{messageClass}}" role="alert" data-auto-dismiss>
+    {{message}}
+  </div>
+  <employee-filter all="{{all}}" male="{{male}}" female="{{female}}" (customRadioSelectionChange)="onRadioButtonChanged($event)"></employee-filter>
+  <div >
+    <table class="table table-bordered table-hover table-striped shadow p-3">
+      <thead>
+        <tr>
+          <th>Employee Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Email</th>
+          <th>Department</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let employee of employees;trackBy:trackByEmployeeId">
+          <tr  *ngIf="selectedValue=='all' || selectedValue == employee.gender.toLowerCase()">
+            <td>{{employee.employeeName}}</td>
+            <td>{{employee.age}}</td>
+            <td>{{employee.gender | uppercase}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.departmentname != null ? employee.departmentname : "No Department"}}</td>
+            <td style="text-align:center">
+              <a style="cursor:pointer" [routerLink]="['/employee/edit/',employee.employeeId]"><fa name="edit" size="lg" class="mr-3 text-primary"></fa></a>
+              <a style="cursor:pointer" (click)="deleteEmployee(employee.employeeId, employee.employeeName)"><fa name="trash" size="lg" class="text-danger"></fa></a>
+
+            </td>
+          </tr>
+        </ng-container>
+        <ng-container>
+          <tr *ngIf="employees && employees.length == 0">
+            <td colspan="6">
+              No data found
+            </td>
+          </tr>
+          <tr *ngIf="!employees ">
+            <td colspan="6">
+              Loading employees...
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

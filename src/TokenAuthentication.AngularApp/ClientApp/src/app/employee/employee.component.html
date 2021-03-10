@@ -1,0 +1,90 @@
+<div>
+  <div style="float:left">
+    <h1>Employee Registration Form</h1>
+  </div>
+  <div style="float:right">
+    <a class="btn btn-primary" [routerLink]="['/employee-list']">Go to Employees List</a>
+  </div>
+  <div style="clear:both"></div>
+  <div *ngIf="alert" class="alert {{messageClass}}" role="alert" data-auto-dismiss>
+    {{message}}
+  </div>
+</div>
+<!--{{employeeForm.value | json}}-->
+<form [formGroup]="employeeForm" (submit)="saveEmployee()">
+  <div class="form-group">
+    <label>Employee Name</label>
+    <input type="text"
+           name="employeeName"
+           [class.is-invalid]="employeeName.touched && employeeName.invalid"
+           [class.is-valid]="employeeName.touched && employeeName.valid"
+           [formControl]="employeeName"
+           class="form-control" />
+    <small class="text-danger" [class.d-none]="employeeName.untouched || employeeName.valid">Employee name is required.</small>
+  </div>
+  <div class="form-group">
+    <label>Age</label>
+    <input type="number"
+           name="age"
+           [formControl]="age"
+           class="form-control"
+           [class.is-invalid]="age.touched && age.invalid"
+           [class.is-valid]="age.touched && age.valid" />
+    <div *ngIf="age.touched && age.invalid">
+      <small class="text-danger" *ngIf="age.errors?.required">Age is required.</small>
+      <small class="text-danger" *ngIf="age.errors?.min">Minimum age should be 15.</small>
+      <small class="text-danger" *ngIf="age.errors?.max">Maximum age should be 100.</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Department</label>
+    <select name="departments"
+            [formControl]="departmentId"
+            (blur)="validateDepartment()"
+            (change)="validateDepartment()"
+            class="form-control"
+            [class.is-invalid]="departmentHasError && departmentId.touched"
+            [class.is-valid]="!departmentHasError && departmentId.touched"
+            >
+      <option value="default" selected="selected">Select Department</option>
+      <option *ngFor="let department of departments" value="{{department.departmentId}}">{{department.departmentName}}</option>
+    </select>
+    <small class="text-danger" [class.d-none]="!departmentHasError">Department selection is required.</small>
+  </div>
+
+  <div class="form-group">
+    <label>Gender</label>
+    <div class="custom-control custom-control-inline custom-radio ml-3">
+      <input type="radio" name="gender" id="male" value="male" class="custom-control-input" [formControl]="gender" />
+      <label class="custom-control-label" for="male">Male</label>
+    </div>
+    <div class="custom-control custom-control-inline custom-radio">
+      <input type="radio" name="gender" id="female" value="female" class="custom-control-input" [formControl]="gender" />
+      <label class="custom-control-label" for="female">Female</label>
+    </div>
+    <div *ngIf="gender.touched && gender.invalid">
+      <small class="text-danger" [class.d-none]="gender.untouched || gender.valid">Gender is required</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="text"
+           name="email"
+           [formControl]="email"
+           class="form-control"
+           [class.is-invalid]="email.touched && email.invalid"
+           [class.is-valid]="email.touched && email.valid" />
+    <div *ngIf="email.touched && email.invalid">
+      <small class="text-danger" *ngIf="email.errors?.required">Email is required in case you subscribe to our offers.</small>
+      <small class="text-danger" *ngIf="email.errors?.email">Email is in incorrect format.</small>
+    </div>
+  </div>
+  <div class="form-group ml-3">
+    <input type="checkbox" name="subscribed" class="form-check-input" [formControl] ="subscribed" />
+    <label for="subscribed" class="form-check-label ml-2">I want to subscribe to the offers.</label>
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Submit" class="btn btn-primary" [disabled]="employeeForm.invalid || departmentHasError" />
+  </div>
+</form>
